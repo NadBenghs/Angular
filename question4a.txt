@@ -1,0 +1,20 @@
+QUESTION 4.a :
+
+Nous distinguons les fichiers suivants : 
+
+
+1-Le fichier CSS (app.component.css), qu'on utilisera pour définir 
+le style du composant. 
+
+2-Le fichier HTML (app.component.html) , dans lequel on retrouvera le code HTML du composant.
+
+3-Le fichier de test (app.component.spec) , qui contient les tests unitaires de l'application
+
+4- Le fichier app.component.ts, dans lequel est défini le Composant , 
+
+5- Le fichier app.config.server qui sert a configurer le contenu de l'application du côté du serveur.
+
+6- Le fichier app.config sert a configurer plusieurs paramètres de l'application tels que les routes et la Client Hydratation ( réutilisation de structures DOM) . 
+
+7- Le fichier app.routes , qui définit les routes de l'application : Chaque composant est relié a une URL.
+
