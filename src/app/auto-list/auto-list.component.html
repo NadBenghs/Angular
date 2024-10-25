@@ -1,0 +1,23 @@
+
+
+<ul>
+    <li *ngFor="let auto of autos">
+   {{ auto.model }} <button [id]="auto.model"  (click)="selectAuto(auto)" >View more</button> 
+    </li>
+  </ul>
+
+<ul>
+
+<div *ngIf="autoVoir not null">
+<div>Photo : <img src={{autoVoir.photo}}></div>
+<div>Marque :{{autoVoir.brand}}</div>
+<div>Prix : {{autoVoir.price}}</div> 
+<div>Puissance : {{autoVoir.power}}</div> 
+<div>Disponibilité : {{autoVoir.availability}}</div> 
+
+</div>
+
+
+</ul>
+
+  
