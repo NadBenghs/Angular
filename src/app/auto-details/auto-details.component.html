@@ -1,0 +1,18 @@
+
+
+<div *ngIf="auto" class="selected-car">
+    <h2>{{auto.marque}} {{auto.modele}} {{auto.version}}</h2>
+    <div class="car-image-wrapper">
+      <img [src]="auto?.image_url" alt="{{ auto?.marque }}" class="selected-car-image" />
+    </div>
+    <div class="car-info">
+      <div><strong>Marque :</strong> {{ auto?.marque }}</div>
+      <div><strong>Modèle :</strong> {{ auto?.modele }}</div>
+      <div><strong>Prix :</strong> {{ auto?.prix }} </div>
+      <div><strong>Version :</strong> {{ auto?.version }}</div>
+      <div><strong>Puissance :</strong> {{ auto?.nb_cylindre }}</div>
+      <div><strong>Carrosserie :</strong> {{ auto?.Carosserie }}</div>
+      <div><strong>Type d'énergie :</strong> {{ auto?.type_energie }}</div>
+    </div>
+  </div>
+  

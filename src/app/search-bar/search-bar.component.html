@@ -1,6 +1,64 @@
+<form id="sb" class="search-bar" (ngSubmit)="onSubmit()" #searchForm="ngForm">
+  <div class="search-item">
+    <label for="car-brand">Marque</label>
+    <input 
+      type="text" 
+      name="carBrand" 
+      id="car-brand" 
+      placeholder="Ex : Skoda" 
+      [(ngModel)]="searchModele" 
+     
+      required
+    >
+  </div>
 
-<div id="sb">
-<div><label for="car-brand">Brand</label></div>
-<div><input type="text" name="car-brand" id="car-brand"></div>
-<div><button (click)="searchAutoList()">Search</button></div>
-</div>
+  <div class="filter-tools">
+    <div class="filter-item">
+      <label for="price-range">Filtrer par prix :</label>
+      <input 
+        type="number"
+        id="price-range-slider" 
+        name="price" 
+        [(ngModel)]="price" 
+        [min]="0" 
+        [max]="1000000" 
+      />
+    
+    </div>
+
+
+    <div class="filter-item">
+      <label for="gearbox-type">Type de boîte</label>
+      <select 
+        id="gearbox-type" 
+        name="gearboxType" 
+        [(ngModel)]="gearboxType"
+      >
+        <option value="">Sélectionner</option>
+        <option value="manuelle">Manuelle</option>
+        <option value="automatique">Automatique</option>
+      </select>
+    </div>
+
+    <div class="filter-item">
+      <label for="caro-type">Type de carrosserie</label>
+      <select 
+        id="car-type" 
+        name="carType" 
+        [(ngModel)]="carType"
+      >
+        <option value="">Sélectionner</option>
+        <option value="SUV">SUV</option>
+        <option value="Citadine">Citadine</option>
+        <option value="Pick-up">Pick-up</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="filter-button">
+    <!-- Reset button to reset the form -->
+    <button type="reset" (click)="resetForm(searchForm)">Reset</button>
+    <!-- Submit button to submit the form -->
+    <button (click)="onSubmit()" type="submit">Filtrer</button>
+  </div>
+</form>

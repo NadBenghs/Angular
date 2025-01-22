@@ -1,37 +1,133 @@
-
-
-
-#sb{
- background-color: rgb(173, 169, 169);
-
+.search-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #f8d7da;
+    padding: 12px 24px;
+    border-radius: 10px;
+    border: 1px solid #f5c6cb;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    justify-content: flex-start;
+    width: 100%;
 }
 
-
-
-
-
-
-div {
-
-display: flex;
-justify-content: center;
-padding: 20px;
-
+.search-item {
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+    margin-bottom: 20px;
 }
 
-label, button, input{
+.search-item label {
+    color: #721c24;
+    margin-bottom: 6px;
+    font-weight: bold;
+    font-size: 14px;
+}
 
+.search-item input {
+    padding: 10px 15px;
+    border: 1px solid #f5c6cb;
+    border-radius: 6px;
+    font-size: 15px;
+    width: 220px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-item input:focus {
+    border-color: #721c24;
+}
+
+.filter-tools {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+
+.filter-item {
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+    margin-bottom: 20px;
+}
+
+.filter-item label {
+    color: #721c24;
+    margin-bottom: 6px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#price-range-slider {
+    width: 220px;
+    margin-top: 10px;
     margin-right: 20px;
-
+    display: block;
 }
 
-label,input{
-
-color: rgb(0, 157, 255);
-
+.price-info {
+    font-size: 16px;
+    font-weight: bold;
+    color: #721c24;
+    margin-top: 6px;
 }
 
-button{
-    background:  rgb(0, 157, 255);
+select {
+    padding: 8px 12px;
+    border: 1px solid #f5c6cb;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    width: 220px;
+    transition: border-color 0.3s ease;
+}
+
+select:focus {
+    border-color: #721c24;
+}
+
+.prince-range{
+    color:  #721c24;
+}
+
+/* Style commun pour les boutons */
+.filter-button button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
     color: white;
-}
+  }
+  
+  /* Bouton Reset : rouge */
+  .filter-button button[type="reset"] {
+    background-color: #ff3e3e; /* Rouge vif */
+  }
+  
+  .filter-button button[type="reset"]:hover {
+    background-color: #cc1c1c; /* Rouge foncé */
+    transform: scale(1.05);
+  }
+  
+  /* Bouton Filtrer : bleu clair */
+  .filter-button button[type="submit"]{
+    background-color: #007bff; /* Bleu clair */
+  }
+  
+  .filter-button button[type="submit"]:hover {
+    background-color: #0056b3; /* Bleu foncé */
+    transform: scale(1.05);
+  }
+  
+  /* Ajout d'un effet focus pour l'accessibilité */
+  .filter-button button:focus {
+    outline: 2px solid #555;
+  }
+  
+  

@@ -1,23 +1,13 @@
-
-
+<app-search-bar (filtreCriteres)="filtrage($event)"></app-search-bar>
 <ul>
-    <li *ngFor="let auto of autos">
-   {{ auto.model }} <button [id]="auto.model"  (click)="selectAuto(auto)" >View more</button> 
-    </li>
-  </ul>
-
-<ul>
-
-<div *ngIf="autoVoir not null">
-<div>Photo : <img src={{autoVoir.photo}}></div>
-<div>Marque :{{autoVoir.brand}}</div>
-<div>Prix : {{autoVoir.price}}</div> 
-<div>Puissance : {{autoVoir.power}}</div> 
-<div>Disponibilité : {{autoVoir.availability}}</div> 
-
-</div>
-
-
+  
+  <li *ngFor="let auto of filteredAutos" class="car-item">
+    <img [src]="auto.image_url" alt="{{ auto.marque }} {{ auto.modele }}" class="car-image" />
+    <div class="car-details">
+      <h3>{{ auto.marque }} {{ auto.modele }}</h3>
+      <div class="car-price">À partir de {{ auto.prix }} </div>
+      <button [routerLink]="['/autos',auto.marque + '.' +auto.modele+'.'+ auto.version]" class="details-button">Détails</button>
+    </div>
+  </li>
 </ul>
 
-  

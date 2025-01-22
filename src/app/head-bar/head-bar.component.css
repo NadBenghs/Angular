@@ -1,9 +1,56 @@
-
-h1{
-    text-align : center;
-    color : blue;
-     
-}
-div{
-    background-color: rgb(38, 232, 38);
-}
+/* Styling global pour le header */
+.header {
+    background-color: #f5f5f5; /* Gris très clair pour le fond du header */
+    color: #000; /* Texte en noir */
+    font-family: Arial, sans-serif;
+    border-bottom: 1px solid #ddd; /* Séparation subtile */
+  }
+  
+  /* Barre supérieure (Top-bar) */
+  .top-bar {
+    height: 20px;
+    background-color: #e0e0e0; /* Gris légèrement plus foncé */
+    border-bottom: 1px solid #ccc;
+  }
+  
+  /* Section du logo */
+  .logo-section {
+    text-align: center;
+    margin: 15px 0; /* Espacement vertical */
+  }
+  
+  .logo {
+    width: 200px; 
+    height: auto; 
+  }
+  
+  /* Barre de navigation */
+  .nav-bar {
+    border-top: 1px solid #ddd;
+    padding: 10px 0;
+  }
+  
+  .nav-bar ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-bar li {
+    margin: 0 20px; /* Espacement entre les liens */
+  }
+  
+  .nav-bar a {
+    text-decoration: none;
+    color: #333; /* Couleur plus sombre pour le texte */
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-bar a:hover {
+    color: #000; /* Noir au survol */
+  }
+  

@@ -1,10 +1,13 @@
-import { Component,Input,Output,EventEmitter } from '@angular/core';
+import { Component,NgModule,Input,Output,EventEmitter } from '@angular/core';
 import { Auto } from '../auto';
+import { FormsModule } from '@angular/forms';
+import { NgForm } from '@angular/forms';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-search-bar',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './search-bar.component.html',
   styleUrl: './search-bar.component.css'
 })
@@ -12,20 +15,69 @@ import { Auto } from '../auto';
 
 export class SearchBarComponent {
 
-  @Input()  autos: Auto[] = [];
-  @Output() resultatsRecherches: EventEmitter<Auto[]> = new EventEmitter<Auto[]>();
+  @Output() filtreCriteres = new EventEmitter<any>();
+  @Output() resetToken= new EventEmitter<number>;
+  searchModele='';
+  price:number=1000000;
+  gearboxType: string = '';
+  carType: string = ''; 
   
-searchAutoList() : void
-{
+  
 
-  let search= document.getElementById('car-brand') as HTMLInputElement;
-  let voiture=search.value;
-  let searchValid : Auto[] = [];
-  searchValid= this.autos.filter( autos => autos.brand.toLowerCase().includes(voiture.toLowerCase()));
-  console.log(searchValid);
-  this.resultatsRecherches.emit(searchValid);  
+  constructor(private cdr: ChangeDetectorRef) {}
 
+  resetForm(form: NgForm){
+    this.searchModele = '';
+    this.price=1000000;
+    this.gearboxType = '';
+    this.carType = '';
+   
+   
+    form.resetForm({
+      searchModele: '',
+      price: this.price,
+      gearboxType: '',
+      carType: '',
+      
+    });
+  this.cdr.detectChanges();
+ 
+    
+    const crit = {
+      searchModele: this.searchModele,
+      price: this.price,
+      gearboxType: this.gearboxType,
+      carType: this.carType,
+    
+    };
+    this.filtreCriteres.emit(crit);
+    
+  }
+  
+  onSubmit() {
+    // Logique de filtrage
+    const crit = {
+      searchModele: this.searchModele,
+      price: this.price,
+      gearboxType: this.gearboxType,
+      carType: this.carType
+    };
+
+    console.log('Formulaire soumis avec les valeurs :', {
+      searchModele: this.searchModele,
+      price: this.price,
+      gearboxType: this.gearboxType,
+      carType: this.carType,
+     
+    })
+
+  this.filtreCriteres.emit(crit);
+}
 
   
+
 }
-}
+ 
+  
+
+
